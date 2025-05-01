@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>饮食健康小程序 UI 展示</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f9fafb;
+            padding: 2rem;
+        }
+        .module-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        .module {
+            flex: 0 0 auto;
+        }
+        iframe {
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        h1, h2 {
+            color: #374151;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto">
+        <h1 class="text-3xl font-bold text-center mb-10">饮食健康小程序 UI 设计展示</h1>
+        
+        <div class="module-container">
+            <div class="module">
+                <h2 class="text-xl font-semibold mb-4 text-center">1. 热量历史记录模块</h2>
+                <iframe src="modules/calorie-history.html" width="375" height="812" frameborder="0"></iframe>
+            </div>
+            
+            <div class="module">
+                <h2 class="text-xl font-semibold mb-4 text-center">2. 当日饮食总览模块</h2>
+                <iframe src="modules/daily-overview.html" width="375" height="812" frameborder="0"></iframe>
+            </div>
+            
+            <div class="module">
+                <h2 class="text-xl font-semibold mb-4 text-center">3. 当日餐食记录模块</h2>
+                <iframe src="modules/meal-records.html" width="375" height="812" frameborder="0"></iframe>
+            </div>
+            
+            <div class="module">
+                <h2 class="text-xl font-semibold mb-4 text-center">4. 导航栏模块</h2>
+                <iframe src="modules/navbar.html" width="375" height="812" frameborder="0"></iframe>
+            </div>
+            
+            <div class="module">
+                <h2 class="text-xl font-semibold mb-4 text-center">5. 完整首页</h2>
+                <iframe src="index.html" width="375" height="812" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
