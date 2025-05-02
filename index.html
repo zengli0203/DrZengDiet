@@ -261,7 +261,7 @@
             </div>
             
             <!-- 当日饮食总览模块 -->
-            <div class="bg-white rounded-xl p-4 mx-4 shadow-sm mb-4">
+            <div class="bg-white rounded-xl p-3 mx-4 shadow-sm mb-4">
                 <div class="flex">
                     <!-- 左侧营养素进度条 -->
                     <div class="flex-grow mr-4">
@@ -273,7 +273,7 @@
                             </div>
                             <div class="text-xs text-gray-500">199%</div>
                         </div>
-                        <div class="nutrient-progress bg-gray-100 mb-3">
+                        <div class="nutrient-progress bg-gray-100 mb-2">
                             <div class="nutrient-progress-bar bg-blue-500" style="width: 100%"></div>
                         </div>
                         
@@ -285,7 +285,7 @@
                             </div>
                             <div class="text-xs text-gray-500">30%</div>
                         </div>
-                        <div class="nutrient-progress bg-gray-100 mb-3">
+                        <div class="nutrient-progress bg-gray-100 mb-2">
                             <div class="nutrient-progress-bar bg-green-500" style="width: 30%"></div>
                         </div>
                         
@@ -304,8 +304,8 @@
                     
                     <!-- 右侧热量信息 -->
                     <div class="flex flex-col justify-center">
-                        <div class="flex items-center mb-3">
-                            <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-2">
+                        <div class="flex items-center mb-2">
+                            <div class="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center mr-2">
                                 <i class="fas fa-fire text-green-500"></i>
                             </div>
                             <div>
@@ -314,7 +314,7 @@
                             </div>
                         </div>
                         <div class="flex items-center">
-                            <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-2">
+                            <div class="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center mr-2">
                                 <i class="fas fa-utensils text-green-500"></i>
                             </div>
                             <div>
@@ -344,7 +344,7 @@
                 </div>
                 
                 <!-- 食物卡片1 -->
-                <div class="meal-card bg-white p-2 shadow-sm mb-2 flex items-center">
+                <a href="pages/meal-edit.html?id=1" class="meal-card bg-white p-2 shadow-sm mb-2 flex items-center block">
                     <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="炒鸡蛋" class="meal-image mr-3">
                     <div class="flex-1">
                         <div class="flex justify-between items-center">
@@ -353,10 +353,10 @@
                         </div>
                         <p class="text-xs text-gray-500">1份(150克)</p>
                     </div>
-                </div>
+                </a>
                 
                 <!-- 食物卡片2 -->
-                <div class="meal-card bg-white p-2 shadow-sm mb-2 flex items-center">
+                <a href="pages/meal-edit.html?id=2" class="meal-card bg-white p-2 shadow-sm mb-2 flex items-center block">
                     <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="炒饭" class="meal-image mr-3">
                     <div class="flex-1">
                         <div class="flex justify-between items-center">
@@ -365,10 +365,10 @@
                         </div>
                         <p class="text-xs text-gray-500">1盘(400克)</p>
                     </div>
-                </div>
+                </a>
                 
                 <!-- 食物卡片3 -->
-                <div class="meal-card bg-white p-2 shadow-sm mb-2 flex items-center">
+                <a href="pages/meal-edit.html?id=3" class="meal-card bg-white p-2 shadow-sm mb-2 flex items-center block">
                     <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="番茄炒蛋" class="meal-image mr-3">
                     <div class="flex-1">
                         <div class="flex justify-between items-center">
@@ -377,7 +377,7 @@
                         </div>
                         <p class="text-xs text-gray-500">1碟(100克)</p>
                     </div>
-                </div>
+                </a>
                 
                 <!-- 日记块 -->
                 <div class="flex items-center mb-2 mt-4">
@@ -394,9 +394,9 @@
             </div>
             
             <!-- 浮动拍照按钮 -->
-            <button class="floating-button bg-green-500 text-white" title="拍照记录饮食">
-                <i class="fas fa-plus text-xl"></i>
-            </button>
+            <a href="pages/camera.html" class="floating-button bg-green-500 text-white" title="拍照记录饮食">
+                <i class="fas fa-camera text-xl"></i>
+            </a>
         </div>
         
         <!-- 底部导航栏 -->
