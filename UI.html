@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>饮食健康小程序 UI 展示</title>
+    <title>Doro卡卡饮食健康小程序 UI 展示</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         body {
@@ -18,6 +18,7 @@
         }
         .module {
             flex: 0 0 auto;
+            margin-bottom: 3rem;
         }
         iframe {
             border: 1px solid #e5e7eb;
@@ -27,36 +28,71 @@
         h1, h2 {
             color: #374151;
         }
+        .section-title {
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
     </style>
 </head>
 <body>
     <div class="container mx-auto">
-        <h1 class="text-3xl font-bold text-center mb-10">饮食健康小程序 UI 设计展示</h1>
+        <h1 class="text-3xl font-bold text-center mb-10">Doro卡卡饮食健康小程序 UI 设计展示</h1>
         
+        <h2 class="text-2xl font-semibold mb-6 text-center section-title">模块组件展示</h2>
         <div class="module-container">
             <div class="module">
                 <h2 class="text-xl font-semibold mb-4 text-center">1. 热量历史记录模块</h2>
-                <iframe src="modules/calorie-history.html" width="375" height="812" frameborder="0"></iframe>
+                <iframe src="modules/calorie-history.html" width="375" height="300" frameborder="0"></iframe>
             </div>
             
             <div class="module">
                 <h2 class="text-xl font-semibold mb-4 text-center">2. 当日饮食总览模块</h2>
-                <iframe src="modules/daily-overview.html" width="375" height="812" frameborder="0"></iframe>
+                <iframe src="modules/daily-overview.html" width="375" height="300" frameborder="0"></iframe>
             </div>
             
             <div class="module">
                 <h2 class="text-xl font-semibold mb-4 text-center">3. 当日餐食记录模块</h2>
-                <iframe src="modules/meal-records.html" width="375" height="812" frameborder="0"></iframe>
+                <iframe src="modules/meal-records.html" width="375" height="300" frameborder="0"></iframe>
             </div>
             
             <div class="module">
                 <h2 class="text-xl font-semibold mb-4 text-center">4. 导航栏模块</h2>
-                <iframe src="modules/navbar.html" width="375" height="812" frameborder="0"></iframe>
+                <iframe src="modules/navbar.html" width="375" height="100" frameborder="0"></iframe>
+            </div>
+        </div>
+        
+        <h2 class="text-2xl font-semibold mb-6 text-center section-title">完整页面展示</h2>
+        <div class="module-container">
+            <div class="module">
+                <h2 class="text-xl font-semibold mb-4 text-center">1. 首页</h2>
+                <iframe src="index.html" width="375" height="812" frameborder="0"></iframe>
             </div>
             
             <div class="module">
-                <h2 class="text-xl font-semibold mb-4 text-center">5. 完整首页</h2>
-                <iframe src="index.html" width="375" height="812" frameborder="0"></iframe>
+                <h2 class="text-xl font-semibold mb-4 text-center">2. 展示页</h2>
+                <iframe src="pages/dashboard.html" width="375" height="812" frameborder="0"></iframe>
+            </div>
+            
+            <div class="module">
+                <h2 class="text-xl font-semibold mb-4 text-center">3. 数据页</h2>
+                <iframe src="pages/data.html" width="375" height="812" frameborder="0"></iframe>
+            </div>
+            
+            <div class="module">
+                <h2 class="text-xl font-semibold mb-4 text-center">4. 个人主页</h2>
+                <iframe src="pages/profile.html" width="375" height="812" frameborder="0"></iframe>
+            </div>
+            
+            <div class="module">
+                <h2 class="text-xl font-semibold mb-4 text-center">5. 拍照页面</h2>
+                <iframe src="pages/camera.html" width="375" height="812" frameborder="0"></iframe>
+            </div>
+            
+            <div class="module">
+                <h2 class="text-xl font-semibold mb-4 text-center">6. 餐食编辑页面</h2>
+                <iframe src="pages/meal-edit.html" width="375" height="812" frameborder="0"></iframe>
             </div>
         </div>
     </div>

@@ -79,33 +79,6 @@
             background-color: #15803D; /* 改为深绿色 */
             border-radius: 20px;
             padding: 16px 10px 12px; /* 缩短垂直距离 */
-            position: relative;
-            overflow: hidden;
-        }
-        .calorie-history-container {
-            display: flex;
-            overflow-x: scroll;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* IE and Edge */
-            -webkit-overflow-scrolling: touch;
-            padding: 0 20px;
-            scroll-behavior: smooth;
-            position: relative;
-        }
-        .calorie-history-container::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Opera */
-        }
-        .calorie-history-inner {
-            display: flex;
-            transition: transform 0.3s ease;
-        }
-        .day-item {
-            flex: 0 0 auto;
-            width: 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0 10px;
         }
         .calorie-bar {
             width: 24px; /* 热量柱变窄 */
@@ -143,6 +116,22 @@
         .day-circle.active {
             background-color: #ffffff;
             color: #15803D;
+        }
+        
+        /* 非常小的屏幕适配 */
+        @media (max-width: 360px) {
+            .calorie-bar {
+                width: 18px;
+                border-radius: 9px;
+            }
+            .day-circle {
+                width: 20px;
+                height: 20px;
+                font-size: 0.75rem;
+            }
+            .day-item {
+                margin: 0;
+            }
         }
         
         /* 历史模式样式 */
@@ -255,7 +244,7 @@
         
         <!-- 内容区域 -->
         <div class="content-area pt-8 pb-16">
-            <div class="px-4 mb-2">
+            <div class="px-4 mb-1">
                 <h1 class="text-xl font-medium text-gray-800">Doro卡卡</h1>
             </div>
             
@@ -266,145 +255,95 @@
                     <i class="fas fa-calendar-alt text-white text-sm"></i>
                 </button>
                 
-                <div class="calorie-history-container" id="calorie-history-scroll">
-                    <div class="calorie-history-inner" id="calorie-history-inner">
-                        <!-- 25日 -->
-                        <div class="day-item">
-                            <div class="h-16 flex items-end mb-1">
-                                <div class="calorie-bar low" style="height: 35%;">
-                                    <div class="absolute -top-4 w-full text-center text-xs font-medium text-white">768</div>
-                                </div>
-                            </div>
-                            <div class="day-circle">
-                                <span class="text-xs">25</span>
+                <div class="flex justify-around items-end">
+                    <!-- 28日 -->
+                    <div class="flex flex-col items-center">
+                        <div class="h-16 flex items-end mb-1"> <!-- 缩短高度 -->
+                            <div class="calorie-bar low" style="height: 40%;">
+                                <div class="absolute -top-4 w-full text-center text-xs font-medium text-white">818</div>
                             </div>
                         </div>
-                        
-                        <!-- 26日 -->
-                        <div class="day-item">
-                            <div class="h-16 flex items-end mb-1">
-                                <div class="calorie-bar medium" style="height: 55%;">
-                                    <div class="absolute -top-4 w-full text-center text-xs font-medium text-white">1073</div>
-                                </div>
-                            </div>
-                            <div class="day-circle">
-                                <span class="text-xs">26</span>
+                        <div class="day-circle">
+                            <span class="text-xs">28</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 29日 - 红色超标 -->
+                    <div class="flex flex-col items-center">
+                        <div class="h-16 flex items-end mb-1"> <!-- 缩短高度 -->
+                            <div class="calorie-bar over" style="height: 85%;">
+                                <div class="absolute -top-4 w-full text-center text-xs font-medium text-white">2124</div>
                             </div>
                         </div>
-                        
-                        <!-- 27日 -->
-                        <div class="day-item">
-                            <div class="h-16 flex items-end mb-1">
-                                <div class="calorie-bar high" style="height: 70%;">
-                                    <div class="absolute -top-4 w-full text-center text-xs font-medium text-white">1486</div>
-                                </div>
-                            </div>
-                            <div class="day-circle">
-                                <span class="text-xs">27</span>
+                        <div class="day-circle">
+                            <span class="text-xs">29</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 30日 -->
+                    <div class="flex flex-col items-center">
+                        <div class="h-16 flex items-end mb-1"> <!-- 缩短高度 -->
+                            <div class="calorie-bar low" style="height: 25%;">
+                                <div class="absolute -top-4 w-full text-center text-xs font-medium text-white">474</div>
                             </div>
                         </div>
-                        
-                        <!-- 28日 -->
-                        <div class="day-item">
-                            <div class="h-16 flex items-end mb-1">
-                                <div class="calorie-bar low" style="height: 40%;">
-                                    <div class="absolute -top-4 w-full text-center text-xs font-medium text-white">818</div>
-                                </div>
-                            </div>
-                            <div class="day-circle">
-                                <span class="text-xs">28</span>
+                        <div class="day-circle">
+                            <span class="text-xs">30</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 1日 - 当天 -->
+                    <div class="flex flex-col items-center">
+                        <div class="h-16 flex items-end mb-1"> <!-- 缩短高度 -->
+                            <div class="calorie-bar active" style="height: 60%;">
+                                <div class="absolute -top-4 w-full text-center text-xs font-medium text-white">1146</div>
                             </div>
                         </div>
-                        
-                        <!-- 29日 - 红色超标 -->
-                        <div class="day-item">
-                            <div class="h-16 flex items-end mb-1">
-                                <div class="calorie-bar over" style="height: 85%;">
-                                    <div class="absolute -top-4 w-full text-center text-xs font-medium text-white">2124</div>
-                                </div>
-                            </div>
-                            <div class="day-circle">
-                                <span class="text-xs">29</span>
+                        <div class="day-circle active">
+                            <span class="text-xs">1</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 2日 -->
+                    <div class="flex flex-col items-center">
+                        <div class="h-16 flex items-end mb-1"> <!-- 缩短高度 -->
+                            <div class="calorie-bar" style="height: 0%;">
+                                <div class="absolute -top-4 w-full text-center text-xs font-medium text-white opacity-0">0</div>
                             </div>
                         </div>
-                        
-                        <!-- 30日 -->
-                        <div class="day-item">
-                            <div class="h-16 flex items-end mb-1">
-                                <div class="calorie-bar low" style="height: 25%;">
-                                    <div class="absolute -top-4 w-full text-center text-xs font-medium text-white">474</div>
-                                </div>
-                            </div>
-                            <div class="day-circle">
-                                <span class="text-xs">30</span>
+                        <div class="day-circle">
+                            <span class="text-xs">2</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 3日 -->
+                    <div class="flex flex-col items-center">
+                        <div class="h-16 flex items-end mb-1"> <!-- 缩短高度 -->
+                            <div class="calorie-bar" style="height: 0%;">
+                                <div class="absolute -top-4 w-full text-center text-xs font-medium text-white opacity-0">0</div>
                             </div>
                         </div>
-                        
-                        <!-- 1日 - 当天 -->
-                        <div class="day-item" id="current-day">
-                            <div class="h-16 flex items-end mb-1">
-                                <div class="calorie-bar active" style="height: 60%;">
-                                    <div class="absolute -top-4 w-full text-center text-xs font-medium text-white">1146</div>
-                                </div>
-                            </div>
-                            <div class="day-circle active">
-                                <span class="text-xs">1</span>
+                        <div class="day-circle">
+                            <span class="text-xs">3</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 4日 -->
+                    <div class="flex flex-col items-center">
+                        <div class="h-16 flex items-end mb-1"> <!-- 缩短高度 -->
+                            <div class="calorie-bar" style="height: 0%;">
+                                <div class="absolute -top-4 w-full text-center text-xs font-medium text-white opacity-0">0</div>
                             </div>
                         </div>
-                        
-                        <!-- 2日 -->
-                        <div class="day-item">
-                            <div class="h-16 flex items-end mb-1">
-                                <div class="calorie-bar" style="height: 0%;">
-                                    <div class="absolute -top-4 w-full text-center text-xs font-medium text-white opacity-0">0</div>
-                                </div>
-                            </div>
-                            <div class="day-circle">
-                                <span class="text-xs">2</span>
-                            </div>
-                        </div>
-                        
-                        <!-- 3日 -->
-                        <div class="day-item">
-                            <div class="h-16 flex items-end mb-1">
-                                <div class="calorie-bar" style="height: 0%;">
-                                    <div class="absolute -top-4 w-full text-center text-xs font-medium text-white opacity-0">0</div>
-                                </div>
-                            </div>
-                            <div class="day-circle">
-                                <span class="text-xs">3</span>
-                            </div>
-                        </div>
-                        
-                        <!-- 4日 -->
-                        <div class="day-item">
-                            <div class="h-16 flex items-end mb-1">
-                                <div class="calorie-bar" style="height: 0%;">
-                                    <div class="absolute -top-4 w-full text-center text-xs font-medium text-white opacity-0">0</div>
-                                </div>
-                            </div>
-                            <div class="day-circle">
-                                <span class="text-xs">4</span>
-                            </div>
-                        </div>
-                        
-                        <!-- 5日 -->
-                        <div class="day-item">
-                            <div class="h-16 flex items-end mb-1">
-                                <div class="calorie-bar" style="height: 0%;">
-                                    <div class="absolute -top-4 w-full text-center text-xs font-medium text-white opacity-0">0</div>
-                                </div>
-                            </div>
-                            <div class="day-circle">
-                                <span class="text-xs">5</span>
-                            </div>
+                        <div class="day-circle">
+                            <span class="text-xs">4</span>
                         </div>
                     </div>
                 </div>
             </div>
             
             <!-- 当日饮食总览模块 -->
-            <div class="bg-white rounded-xl p-3 mx-4 shadow-sm mb-4">
+            <div class="bg-white rounded-xl p-2 mx-4 shadow-sm mb-3">
                 <div class="flex">
                     <!-- 左侧营养素进度条 -->
                     <div class="flex-grow mr-4">
@@ -416,7 +355,7 @@
                             </div>
                             <div class="text-xs text-gray-500">199%</div>
                         </div>
-                        <div class="nutrient-progress bg-gray-100 mb-1.5">
+                        <div class="nutrient-progress bg-gray-100 mb-1">
                             <div class="nutrient-progress-bar bg-blue-500" style="width: 100%"></div>
                         </div>
                         
@@ -428,7 +367,7 @@
                             </div>
                             <div class="text-xs text-gray-500">30%</div>
                         </div>
-                        <div class="nutrient-progress bg-gray-100 mb-1.5">
+                        <div class="nutrient-progress bg-gray-100 mb-1">
                             <div class="nutrient-progress-bar bg-green-500" style="width: 30%"></div>
                         </div>
                         
@@ -447,7 +386,7 @@
                     
                     <!-- 右侧热量信息 -->
                     <div class="flex flex-col justify-center">
-                        <div class="flex items-center mb-1.5">
+                        <div class="flex items-center mb-1">
                             <div class="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center mr-2">
                                 <i class="fas fa-fire text-green-500"></i>
                             </div>
@@ -472,7 +411,7 @@
             <!-- 当日餐食记录模块 -->
             <div class="px-4">
                 <!-- 午餐记录 -->
-                <div class="flex items-center mb-2">
+                <div class="flex items-center mb-1">
                     <i class="fas fa-utensils text-green-500 mr-2"></i>
                     <span class="text-sm font-medium text-gray-700">午餐</span>
                     <span class="ml-auto text-sm text-gray-500">615千卡</span>
@@ -487,7 +426,7 @@
                 </div>
                 
                 <!-- 午餐食物卡片1 -->
-                <a href="pages/meal-edit.html?id=4" class="meal-card bg-white p-2 shadow-sm flex items-center block">
+                <a href="pages/meal-edit.html?id=4" class="meal-card bg-white p-2 shadow-sm flex items-center block mb-1">
                     <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="炸鸡" class="meal-image mr-3">
                     <div class="flex-1">
                         <div class="flex justify-between items-center">
@@ -499,7 +438,7 @@
                 </a>
                 
                 <!-- 午餐食物卡片2 -->
-                <a href="pages/meal-edit.html?id=5" class="meal-card bg-white p-2 shadow-sm flex items-center block">
+                <a href="pages/meal-edit.html?id=5" class="meal-card bg-white p-2 shadow-sm flex items-center block mb-1">
                     <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="薯条" class="meal-image mr-3">
                     <div class="flex-1">
                         <div class="flex justify-between items-center">
@@ -511,7 +450,7 @@
                 </a>
                 
                 <!-- 下午加餐记录 -->
-                <div class="flex items-center mb-2 mt-3">
+                <div class="flex items-center mb-1 mt-2">
                     <i class="fas fa-utensils text-green-500 mr-2"></i>
                     <span class="text-sm font-medium text-gray-700">下午加餐</span>
                     <span class="ml-auto text-sm text-gray-500">531.8千卡</span>
@@ -526,7 +465,7 @@
                 </div>
                 
                 <!-- 食物卡片1 -->
-                <a href="pages/meal-edit.html?id=1" class="meal-card bg-white p-2 shadow-sm flex items-center block">
+                <a href="pages/meal-edit.html?id=1" class="meal-card bg-white p-2 shadow-sm flex items-center block mb-1">
                     <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="炒鸡蛋" class="meal-image mr-3">
                     <div class="flex-1">
                         <div class="flex justify-between items-center">
@@ -538,7 +477,7 @@
                 </a>
                 
                 <!-- 食物卡片2 -->
-                <a href="pages/meal-edit.html?id=2" class="meal-card bg-white p-2 shadow-sm flex items-center block">
+                <a href="pages/meal-edit.html?id=2" class="meal-card bg-white p-2 shadow-sm flex items-center block mb-1">
                     <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="炒饭" class="meal-image mr-3">
                     <div class="flex-1">
                         <div class="flex justify-between items-center">
@@ -562,20 +501,20 @@
                 </a>
                 
                 <!-- 日记块 -->
-                <div class="flex items-center mb-2 mt-4">
+                <div class="flex items-center mb-1 mt-2">
                     <i class="far fa-calendar-alt text-green-500 mr-2"></i>
                     <span class="text-sm font-medium text-gray-700">日记</span>
                 </div>
                 
-                <div id="diary-placeholder" class="bg-white rounded-xl p-4 shadow-sm mb-4 flex items-center cursor-pointer">
-                    <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center mr-3">
+                <div id="diary-placeholder" class="bg-white rounded-xl p-3 shadow-sm mb-3 flex items-center cursor-pointer">
+                    <div class="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center mr-3">
                         <i class="far fa-smile text-gray-300 text-xl"></i>
                     </div>
                     <span class="text-sm text-gray-400">点击添加今天的健康日记</span>
                 </div>
                 
-                <div id="diary-content" class="diary-entry hidden mb-4">
-                    <div class="flex justify-between items-start mb-3">
+                <div id="diary-content" class="diary-entry hidden mb-3">
+                    <div class="flex justify-between items-start mb-2">
                         <div class="flex items-center">
                             <div id="diary-mood-icon" class="w-10 h-10 rounded-full flex items-center justify-center mr-2">
                                 <!-- 心情图标将在这里显示 -->
@@ -786,6 +725,10 @@
             const selectDateBtn = document.getElementById('select-date-btn');
             const phoneContainer = document.getElementById('phone-container');
             const dateBtns = document.querySelectorAll('.date-btn');
+            
+            // 不再需要滚动控制，因为所有7天都可见
+            const historyContainer = document.getElementById('calorie-history-scroll');
+            const currentDayEl = document.getElementById('current-day');
             
             let selectedDate = null;
             
